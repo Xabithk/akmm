@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#073e32">
+  <title>AKMMIAC Administration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+<body>
+  <div class="access-screen" id="access-screen">
+    <a class="admin-brand" href="index.html"><span class="brand-symbol">أ</span><span><b>AKMMIAC</b><small>ADMINISTRATION</small></span></a>
+    <div class="access-box">
+      <span class="access-icon" aria-hidden="true">⌑</span>
+      <p class="eyebrow">PRIVATE WORKSPACE</p>
+      <h1>Administrator<br><em>access.</em></h1>
+      <div class="security-warning"><strong>Secure sign-in is not connected.</strong><p>This static preview has no authentication server. Do not enter passwords or add real student, applicant or staff data.</p></div>
+      <button class="preview-button" id="preview-button" type="button">Open interface preview <span>↗</span></button>
+      <a class="back-link" href="index.html">← Return to public website</a>
+    </div>
+    <p class="access-foot">AKMMIAC · ADMIN PREVIEW · NO LIVE RECORDS</p>
+  </div>
+
+  <div class="admin-app" id="admin-app" hidden>
+    <aside class="sidebar" id="sidebar">
+      <a class="admin-brand sidebar-brand" href="index.html"><span class="brand-symbol">أ</span><span><b>AKMMIAC</b><small>ADMINISTRATION</small></span></a>
+      <div class="workspace-label">WORKSPACE <span>PREVIEW</span></div>
+      <nav class="admin-nav" aria-label="Administration sections">
+        <button class="admin-nav-item active" data-view="overview"><span class="nav-icon">▦</span>Overview</button>
+        <span class="nav-group-label">COLLEGE MANAGEMENT</span>
+        <button class="admin-nav-item" data-view="students"><span class="nav-icon">♙</span>Students <span class="nav-count">0</span></button>
+        <button class="admin-nav-item" data-view="admissions"><span class="nav-icon">↗</span>Admission enquiries <span class="nav-count" id="admission-count">0</span></button>
+        <button class="admin-nav-item" data-view="faculty"><span class="nav-icon">♧</span>Faculty & staff</button>
+        <span class="nav-group-label">PUBLISHING</span>
+        <button class="admin-nav-item" data-view="announcements"><span class="nav-icon">◷</span>News & announcements</button>
+        <button class="admin-nav-item" data-view="events"><span class="nav-icon">▤</span>Events</button>
+        <button class="admin-nav-item" data-view="gallery"><span class="nav-icon">▧</span>Gallery</button>
+        <button class="admin-nav-item" data-view="achievements"><span class="nav-icon">✳</span>Achievements</button>
+        <button class="admin-nav-item" data-view="academics"><span class="nav-icon">⌂</span>Academic content</button>
+        <span class="nav-group-label">SITE & ACCESS</span>
+        <button class="admin-nav-item" data-view="messages"><span class="nav-icon">✉</span>Contact messages</button>
+        <button class="admin-nav-item" data-view="settings"><span class="nav-icon">⚙</span>Website settings</button>
+        <button class="admin-nav-item" data-view="users"><span class="nav-icon">♧</span>Administrator accounts</button>
+      </nav>
+      <div class="sidebar-bottom"><a href="index.html"><span>↙</span> Public website</a><button id="exit-preview"><span>×</span> Exit preview</button></div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="topbar"><button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle navigation">☰</button><div class="breadcrumbs">AKMMIAC <span>/</span> <b id="breadcrumb">Overview</b></div><div class="top-actions"><span class="preview-pill"><i></i> PREVIEW MODE</span><button class="profile-button" id="profile-button"><span class="profile-avatar">A</span><span>Administrator<small>Preview only</small></span><b>⌄</b></button></div></header>
+      <div class="security-banner"><span class="warning-mark">!</span><p><strong>Not secured for live use.</strong> Authentication, role permissions, database and audit logging must be connected before managing real records.</p><a href="#security-notes" data-view-link="settings">Security notes <span>→</span></a></div>
+
+      <div class="view-area">
+        <section class="view-panel active" id="view-overview">
+          <div class="page-heading"><div><p class="eyebrow">COLLEGE OPERATIONS</p><h1>Good day, <em>Administrator.</em></h1><p>Here is the current state of your college website workspace.</p></div><span class="date-stamp" id="today-label"></span></div>
+          <div class="stat-grid"><article class="stat-card"><span>ADMISSION ENQUIRIES</span><strong id="overview-enquiries">0</strong><small>Stored in this browser preview</small><span class="stat-mark green">↗</span></article><article class="stat-card"><span>PUBLISHED NOTICES</span><strong id="overview-notices">0</strong><small>Local demonstration content</small><span class="stat-mark gold">◷</span></article><article class="stat-card"><span>GALLERY ITEMS</span><strong>0</strong><small>Awaiting approved uploads</small><span class="stat-mark rust">▧</span></article><article class="stat-card"><span>STUDENT RECORDS</span><strong>—</strong><small>Not connected</small><span class="stat-mark blue">♙</span></article></div>
+          <div class="overview-grid"><section class="panel-card activity-card"><div class="panel-heading"><div><span class="eyebrow">RECENT ACTIVITY</span><h2>Latest updates</h2></div><button class="quiet-button" data-open-view="announcements">Manage notices <span>→</span></button></div><div class="activity-list" id="recent-activity"><p class="empty-state">No notices have been published in this preview.</p></div></section><section class="panel-card readiness-card"><div class="panel-heading"><div><span class="eyebrow">SETUP STATUS</span><h2>Before launch</h2></div><span class="status-badge">INCOMPLETE</span></div><ul class="readiness-list"><li><span class="status-dot pending"></span> Secure administrator sign-in <b>Pending</b></li><li><span class="status-dot pending"></span> Database and access policies <b>Pending</b></li><li><span class="status-dot pending"></span> Approved college content <b>Pending</b></li><li><span class="status-dot done"></span> Public contact details <b>Added</b></li></ul></section></div>
+          <section class="panel-card quick-actions"><div class="panel-heading"><div><span class="eyebrow">QUICK ACCESS</span><h2>Common tasks</h2></div></div><div class="quick-grid"><button data-open-view="admissions"><span>↗</span><b>Review enquiries</b><small>View locally submitted demo forms</small></button><button data-open-view="announcements"><span>◷</span><b>Publish an update</b><small>Create a local demonstration notice</small></button><button data-open-view="settings"><span>⚙</span><b>Review setup</b><small>See pending website configuration</small></button></div></section>
+        </section>
+
+        <section class="view-panel" id="view-students"><div class="page-heading"><div><p class="eyebrow">COLLEGE MANAGEMENT</p><h1>Students</h1><p>Student records require authenticated access and a protected database.</p></div></div><div class="panel-card empty-module"><span class="large-module-icon">♙</span><h2>Student management is not connected</h2><p>No student data is stored or displayed in this preview. Connect secure authentication, role permissions and a database before enabling this module.</p><button class="primary-button" data-open-view="settings">Review security requirements <span>→</span></button></div></section>
+
+        <section class="view-panel" id="view-admissions"><div class="page-heading"><div><p class="eyebrow">COLLEGE MANAGEMENT</p><h1>Admission enquiries</h1><p>Review and export enquiries submitted on this browser only.</p></div><button class="outline-button" id="export-enquiries">Export CSV <span>↓</span></button></div><div class="panel-card module-table"><div class="table-toolbar"><label class="table-search">⌕ <input id="enquiry-search" type="search" placeholder="Search enquiries"></label><span class="table-note">LOCAL DEMO DATA ONLY</span></div><div class="table-scroll"><table><thead><tr><th>APPLICANT</th><th>PHONE</th><th>PROGRAMME</th><th>SUBMITTED</th><th>STATUS</th></tr></thead><tbody id="enquiry-rows"></tbody></table></div><p class="empty-state" id="enquiry-empty">No demo enquiries are stored in this browser.</p></div><p class="module-disclaimer">Do not treat browser-stored demo enquiries as private or secure applicant records.</p></section>
+
+        <section class="view-panel" id="view-faculty"><div class="page-heading"><div><p class="eyebrow">COLLEGE MANAGEMENT</p><h1>Faculty & staff</h1><p>Directory entries are intentionally empty until verified staff details are supplied.</p></div><button class="primary-button" disabled>Add profile <span>＋</span></button></div><div class="panel-card empty-module"><span class="large-module-icon">♧</span><h2>No staff profiles added</h2><p>Names, designations, departments, qualifications and biographies need college approval before publication.</p></div></section>
+
+        <section class="view-panel" id="view-announcements"><div class="page-heading"><div><p class="eyebrow">PUBLISHING</p><h1>News & announcements</h1><p>Create, review and remove local preview notices.</p></div></div><div class="content-layout"><form class="panel-card editor-form" id="notice-form"><div class="panel-heading"><div><span class="eyebrow">NEW CONTENT</span><h2>Compose a notice</h2></div></div><label>Title<input name="title" maxlength="90" required placeholder="Clear, concise title"></label><div class="form-row"><label>Category<select name="category"><option>College News</option><option>Announcement</option><option>Academic Update</option><option>Event</option><option>Examination Update</option><option>Admission Update</option></select></label><label>Publication date<input name="date" type="date" required></label></div><label>Summary<textarea name="description" maxlength="180" rows="4" required placeholder="Write a short summary"></textarea></label><button class="primary-button" type="submit">Publish preview notice <span>↗</span></button><p class="module-disclaimer">Saved in this browser only. Not published to a live college website.</p></form><section class="panel-card notice-list-card"><div class="panel-heading"><div><span class="eyebrow">CONTENT LIBRARY</span><h2>Saved notices</h2></div><span class="item-count" id="notice-count">0</span></div><div id="notice-list"></div></section></div></section>
+
+        <section class="view-panel" id="view-events"><div class="page-heading"><div><p class="eyebrow">PUBLISHING</p><h1>Events</h1><p>Event management is ready for verified event details and approved imagery.</p></div><button class="primary-button" disabled>Add event <span>＋</span></button></div><div class="panel-card empty-module"><span class="large-module-icon">▤</span><h2>No events in the preview</h2><p>Event dates and descriptions have not been supplied. Add only confirmed information.</p></div></section>
+
+        <section class="view-panel" id="view-gallery"><div class="page-heading"><div><p class="eyebrow">PUBLISHING</p><h1>Gallery</h1><p>Image uploads and albums are unavailable until secure storage is configured.</p></div><button class="primary-button" disabled>Upload images <span>＋</span></button></div><div class="panel-card empty-module"><span class="large-module-icon">▧</span><h2>No college photographs uploaded</h2><p>Use approved AKMMIAC photographs only. Current public-site images are clearly marked illustrative placeholders.</p></div></section>
+
+        <section class="view-panel" id="view-achievements"><div class="page-heading"><div><p class="eyebrow">PUBLISHING</p><h1>Achievements</h1><p>Publish verified milestones only. No sample awards are provided.</p></div><button class="primary-button" disabled>Add achievement <span>＋</span></button></div><div class="panel-card empty-module"><span class="large-module-icon">✳</span><h2>Awaiting verified entries</h2><p>Academic, student, arts, sports and institutional achievements need supporting details and college confirmation.</p></div></section>
+
+        <section class="view-panel" id="view-academics"><div class="page-heading"><div><p class="eyebrow">PUBLISHING</p><h1>Academic content</h1><p>Only confirmed programme information should be published.</p></div></div><div class="academic-admin-grid"><article class="panel-card academic-admin-card"><span>01 / ACADEMIC STREAM</span><h2>Plus Two Humanities</h2><p>Programme listed from supplied college information. Detailed subjects and curriculum await confirmation.</p><button disabled>Edit programme <span>↗</span></button></article><article class="panel-card academic-admin-card"><span>02 / INTEGRATED LEARNING</span><h2>Islamic Studies</h2><p>Programme listed from supplied college information. Study categories need college review.</p><button disabled>Edit programme <span>↗</span></button></article></div></section>
+
+        <section class="view-panel" id="view-messages"><div class="page-heading"><div><p class="eyebrow">SITE & ACCESS</p><h1>Contact messages</h1><p>Messages submitted in this browser are not sent to the college.</p></div></div><div class="panel-card empty-module"><span class="large-module-icon">✉</span><h2>No live contact inbox</h2><p>Connect a server-side form endpoint before collecting or storing real contact messages.</p></div></section>
+
+        <section class="view-panel" id="view-settings"><div class="page-heading"><div><p class="eyebrow">SITE & ACCESS</p><h1 id="security-notes">Website settings & security</h1><p>Configuration checklist for a production deployment.</p></div></div><div class="settings-layout"><section class="panel-card settings-card"><div class="panel-heading"><div><span class="eyebrow">SECURITY CHECKLIST</span><h2>Required before launch</h2></div><span class="status-badge">PENDING</span></div><div class="setting-row"><span class="setting-icon">⌑</span><div><b>Authentication provider</b><small>Use managed authentication or a server-side identity provider.</small></div><span class="setting-state">Not configured</span></div><div class="setting-row"><span class="setting-icon">♙</span><div><b>Role-based authorization</b><small>Enforce permissions on every server route and database policy.</small></div><span class="setting-state">Not configured</span></div><div class="setting-row"><span class="setting-icon">▤</span><div><b>Protected data storage</b><small>Use server-side database access and least-privilege policies.</small></div><span class="setting-state">Not configured</span></div><div class="setting-row"><span class="setting-icon">◷</span><div><b>Session, audit and recovery</b><small>Configure secure sessions, admin activity logs and account recovery.</small></div><span class="setting-state">Not configured</span></div></section><section class="panel-card settings-card"><div class="panel-heading"><div><span class="eyebrow">COLLEGE INFORMATION</span><h2>Website content status</h2></div></div><div class="setting-row"><div><b>Phone numbers and address</b><small>Provided in the project brief.</small></div><span class="state-confirmed">Provided</span></div><div class="setting-row"><div><b>Admission criteria and dates</b><small>Awaiting official details.</small></div><span class="setting-state">Awaiting</span></div><div class="setting-row"><div><b>Staff, achievements and campus photos</b><small>Require verified college material.</small></div><span class="setting-state">Awaiting</span></div><div class="setting-row"><div><b>Official email and social links</b><small>Not supplied.</small></div><span class="setting-state">Awaiting</span></div></section></div></section>
+
+        <section class="view-panel" id="view-users"><div class="page-heading"><div><p class="eyebrow">SITE & ACCESS</p><h1>Administrator accounts</h1><p>User management is disabled until real authentication is configured.</p></div><button class="primary-button" disabled>Invite administrator <span>＋</span></button></div><div class="panel-card empty-module"><span class="large-module-icon">♧</span><h2>No administrator accounts configured</h2><p>This preview does not create, authenticate or authorize users. Never store credentials in frontend code or browser storage.</p></div></section>
+      </div>
+      <footer class="admin-footer"><span>AKMMIAC ADMINISTRATION · PREVIEW</span><span>No live student or applicant records are connected.</span><a href="index.html">Public website ↗</a></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

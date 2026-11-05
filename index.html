@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#073e32">
+  <meta name="theme-color" content="#0b1424">
   <meta name="description" content="Ahmad Kutty Musliyar Memorial College of Islamic & Arts, Kainikkara, Tirur. Plus Two Humanities with Islamic Studies, affiliated with SNEC (Affiliation No. 07).">
   <meta property="og:title" content="AKMMIAC | Knowledge, Character, Community">
   <meta property="og:description" content="Discover Ahmad Kutty Musliyar Memorial College of Islamic & Arts in Kainikkara, Tirur, Kerala.">
@@ -14,9 +14,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="modern-theme.css">
   <script src="app.js" defer></script>
 </head>
 <body>
+  <div class="pointer-cursor" id="pointer-cursor" aria-hidden="true"><span class="pointer-cursor__ring"></span><span class="pointer-cursor__dot"></span></div>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="utility-bar">
     <div class="container utility-inner">
@@ -33,7 +35,7 @@
       </a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
       <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
-        <a href="#about">About</a><a href="#academics">Academics</a><a href="#campus">Campus life</a><a href="#achievements">Achievements</a><a href="#news">News</a><a href="#gallery">Gallery</a>
+        <a href="#about">About</a><a href="#academics">Academics</a><a href="#campus">Campus life</a><a href="#achievements">Achievements</a><a href="#news">News</a><a href="#gallery">Gallery</a><a href="#people">People</a>
         <a class="nav-admissions" href="#admissions">Admissions <span aria-hidden="true">↗</span></a>
         <button class="nav-login" data-open="student">Student portal <span aria-hidden="true">↗</span></button>
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><span aria-hidden="true">☾</span></button>
@@ -149,9 +151,9 @@
       <div class="container achievement-grid"><div class="achievement-copy reveal"><p class="section-kicker">A RECORD STILL TO WRITE</p><h2 class="section-title">Every milestone<br>deserves <em>its truth.</em></h2><p>Academic distinctions, student achievements and institutional milestones will be added here after verification by the college.</p><a class="text-link light-link" href="#contact">Submit a verified update <span>→</span></a></div><div class="achievement-empty reveal"><div class="empty-mark">✳</div><div><span>ACHIEVEMENTS ARCHIVE</span><strong>Awaiting verified<br>college entries</strong><small>No sample awards or accomplishments are displayed.</small></div><span class="archive-index">00 / 00</span></div></div>
     </section>
 
-    <section class="section resources-section" id="resources">
+    <section class="section resources-section" id="people">
       <div class="container resources-grid">
-        <div class="resource-column reveal"><p class="section-kicker">PEOPLE OF THE COLLEGE</p><h2 class="section-title">Faculty <em>directory.</em></h2><p class="resource-intro">A directory for college-approved staff profiles, qualifications and departments.</p><div class="resource-empty"><span class="resource-empty-mark">01</span><div><strong>Profiles awaiting college details</strong><small>No names, photographs or qualifications have been supplied.</small></div><span class="resource-arrow">↗</span></div></div>
+        <div class="resource-column people-column reveal"><p class="section-kicker">PEOPLE OF THE COLLEGE</p><h2 class="section-title">Our college <em>community.</em></h2><p class="resource-intro">Meet the college leadership and see our community at a glance.</p><div class="people-counts" aria-label="College community totals"><div><strong>80+</strong><span>STUDENTS</span></div><div><strong>9</strong><span>STAFF MEMBERS</span></div></div><div class="staff-leadership" aria-label="College leadership"><article class="staff-profile"><span class="staff-initials" aria-hidden="true">JA</span><div><span class="staff-role">PRINCIPAL</span><h3>Jabir Anwari</h3></div></article><article class="staff-profile"><span class="staff-initials" aria-hidden="true">SW</span><div><span class="staff-role">VICE PRINCIPAL</span><h3>Sinan Wafy</h3></div></article></div><p class="staff-note">The total of 9 staff includes the Principal and Vice Principal. Other staff profiles will be added when their details are confirmed.</p></div>
         <div class="resource-column reveal"><p class="section-kicker">DOCUMENTS & DOWNLOADS</p><h2 class="section-title">Resource <em>centre.</em></h2><p class="resource-intro">Verified college documents will be added here when available.</p><div class="resource-list"><div><span>01</span><strong>College prospectus</strong><small>Awaiting approved PDF</small><b>—</b></div><div><span>02</span><strong>Admission documents</strong><small>Awaiting approved PDF</small><b>—</b></div><div><span>03</span><strong>Academic calendar & timetables</strong><small>Awaiting approved PDF</small><b>—</b></div><div><span>04</span><strong>Examination notifications</strong><small>Awaiting approved PDF</small><b>—</b></div></div></div>
       </div>
     </section>
@@ -177,7 +179,7 @@
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-main"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><span>أ</span><i></i></span><span class="brand-name"><strong>AKMMIAC</strong><small>Ahmad Kutty Musliyar Memorial College<br>of Islamic & Arts</small></span></a><p class="footer-note">Knowledge with purpose.<br>Character for life.</p><div class="footer-links"><span>EXPLORE</span><a href="#about">About</a><a href="#academics">Academics</a><a href="#resources">Faculty & downloads</a><a href="#news">News & notices</a><a href="#admissions">Admissions</a></div><div class="footer-links"><span>CONNECT</span><a href="#contact">Contact</a><a href="https://www.snec.in/" target="_blank" rel="noreferrer">SNEC <span>↗</span></a><button data-open="student">Student portal <span>↗</span></button></div></div><div class="container footer-bottom"><span>© <span id="current-year"></span> AKMMIAC</span><span>Affiliated with Samastha National Education Council · No. 07</span><a href="#top">Back to top ↑</a></div></footer>
+  <footer class="site-footer"><div class="container footer-main"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><span>أ</span><i></i></span><span class="brand-name"><strong>AKMMIAC</strong><small>Ahmad Kutty Musliyar Memorial College<br>of Islamic & Arts</small></span></a><p class="footer-note">Knowledge with purpose.<br>Character for life.</p><div class="footer-links"><span>EXPLORE</span><a href="#about">About</a><a href="#academics">Academics</a><a href="#people">People & downloads</a><a href="#news">News & notices</a><a href="#admissions">Admissions</a></div><div class="footer-links"><span>CONNECT</span><a href="#contact">Contact</a><a href="https://www.snec.in/" target="_blank" rel="noreferrer">SNEC <span>↗</span></a><button data-open="student">Student portal <span>↗</span></button></div></div><div class="container footer-bottom"><span>© <span id="current-year"></span> AKMMIAC</span><span>Affiliated with Samastha National Education Council · No. 07</span><a href="#top">Back to top ↑</a></div></footer>
 
   <div class="modal-backdrop" id="modal-backdrop" hidden>
     <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" aria-label="Close dialog">×</button><div class="modal-content" id="modal-content"></div></section>

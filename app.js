@@ -18,8 +18,26 @@ function setTheme(isDark) {
   themeToggle.querySelector("span").textContent = isDark ? "☼" : "☾";
   localStorage.setItem("akmmiac-theme", isDark ? "dark" : "light");
 }
-setTheme(localStorage.getItem("akmmiac-theme") === "dark");
+setTheme(localStorage.getItem("akmmiac-theme") !== "light");
 themeToggle.addEventListener("click", () => setTheme(!document.body.classList.contains("theme-dark")));
+
+const pointerCursor = document.querySelector("#pointer-cursor");
+const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+if (pointerCursor && finePointer.matches && !reducedMotion.matches) {
+  document.body.classList.add("has-custom-pointer");
+  window.addEventListener("pointermove", (event) => {
+    if (event.pointerType !== "mouse") return;
+    pointerCursor.style.setProperty("--pointer-x", `${event.clientX}px`);
+    pointerCursor.style.setProperty("--pointer-y", `${event.clientY}px`);
+    pointerCursor.classList.add("is-visible");
+  }, { passive: true });
+  document.addEventListener("pointerover", (event) => {
+    const target = event.target instanceof Element ? event.target.closest("a, button, input, textarea, select, [role='button']") : null;
+    pointerCursor.classList.toggle("is-interactive", Boolean(target));
+  }, { passive: true });
+  window.addEventListener("blur", () => pointerCursor.classList.remove("is-visible"));
+}
 
 const revealElements = document.querySelectorAll(".reveal");
 function revealVisibleElements() {

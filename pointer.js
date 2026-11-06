@@ -38,14 +38,22 @@ const highlightSelector = [
   ".academic-admin-card",
 ].join(", ");
 
-function getHighlightTargets(element) {
-  const targets = [];
+function getHighlightTarget(element) {
+  return element.closest(highlightSelector);
+}
 
-  for (let current = element; current && current !== document.body; current = current.parentElement) {
-    if (current.matches(highlightSelector)) targets.push(current);
+function setHighlighted(target, isHighlighted) {
+  if (isHighlighted) {
+    const radius = getComputedStyle(target).borderTopLeftRadius;
+    if (Number.parseFloat(radius) > 0) {
+      target.style.setProperty("--pointer-highlight-radius", getComputedStyle(target).borderRadius);
+    }
+    target.classList.add("pointer-highlight");
+    return;
   }
 
-  return targets;
+  target.classList.remove("pointer-highlight");
+  target.style.removeProperty("--pointer-highlight-radius");
 }
 
 if (pointerCursor && finePointer.matches && !reducedMotion.matches) {
@@ -67,21 +75,23 @@ if (pointerCursor && finePointer.matches && !reducedMotion.matches) {
 
   document.addEventListener("pointerover", (event) => {
     if (!(event.target instanceof Element)) return;
-    getHighlightTargets(event.target).forEach((target) => target.classList.add("pointer-highlight"));
+    const target = getHighlightTarget(event.target);
+    if (target) setHighlighted(target, true);
   }, { passive: true });
 
   document.addEventListener("pointerout", (event) => {
     if (!(event.target instanceof Element)) return;
-    const currentTargets = getHighlightTargets(event.target);
-    const nextTargets = event.relatedTarget instanceof Element ? new Set(getHighlightTargets(event.relatedTarget)) : new Set();
-    currentTargets.forEach((target) => {
-      if (!nextTargets.has(target)) target.classList.remove("pointer-highlight");
-    });
+    const target = getHighlightTarget(event.target);
+    const nextTarget = event.relatedTarget instanceof Element ? getHighlightTarget(event.relatedTarget) : null;
+    if (target && target !== nextTarget) setHighlighted(target, false);
   }, { passive: true });
 
   document.addEventListener("pointerleave", () => {
     pointerCursor.classList.remove("is-visible");
-    document.querySelectorAll(".pointer-highlight").forEach((target) => target.classList.remove("pointer-highlight"));
+    document.querySelectorAll(".pointer-highlight").forEach((target) => setHighlighted(target, false));
   });
-  window.addEventListener("blur", () => pointerCursor.classList.remove("is-visible"));
+  window.addEventListener("blur", () => {
+    pointerCursor.classList.remove("is-visible");
+    document.querySelectorAll(".pointer-highlight").forEach((target) => setHighlighted(target, false));
+  });
 }

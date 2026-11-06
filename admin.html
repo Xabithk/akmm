@@ -4,15 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#073e32">
+  <meta name="theme-color" content="#0b1424">
   <title>AKMMIAC Administration</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="modern-theme.css">
+  <link rel="stylesheet" href="akmmiac-brand.css">
+  <script src="pointer.js" defer></script>
   <script src="admin.js" defer></script>
 </head>
-<body>
+<body class="theme-dark admin-theme">
+  <div class="pointer-cursor" id="pointer-cursor" aria-hidden="true"><span class="pointer-cursor__ring"></span></div>
   <div class="access-screen" id="access-screen">
     <a class="admin-brand" href="index.html"><span class="brand-symbol">أ</span><span><b>AKMMIAC</b><small>ADMINISTRATION</small></span></a>
     <div class="access-box">
@@ -76,7 +80,7 @@
 
         <section class="view-panel" id="view-achievements"><div class="page-heading"><div><p class="eyebrow">PUBLISHING</p><h1>Achievements</h1><p>Publish verified milestones only. No sample awards are provided.</p></div><button class="primary-button" disabled>Add achievement <span>＋</span></button></div><div class="panel-card empty-module"><span class="large-module-icon">✳</span><h2>Awaiting verified entries</h2><p>Academic, student, arts, sports and institutional achievements need supporting details and college confirmation.</p></div></section>
 
-        <section class="view-panel" id="view-academics"><div class="page-heading"><div><p class="eyebrow">PUBLISHING</p><h1>Academic content</h1><p>Only confirmed programme information should be published.</p></div></div><div class="academic-admin-grid"><article class="panel-card academic-admin-card"><span>01 / ACADEMIC STREAM</span><h2>Plus Two Humanities</h2><p>Programme listed from supplied college information. Detailed subjects and curriculum await confirmation.</p><button disabled>Edit programme <span>↗</span></button></article><article class="panel-card academic-admin-card"><span>02 / INTEGRATED LEARNING</span><h2>Islamic Studies</h2><p>Programme listed from supplied college information. Study categories need college review.</p><button disabled>Edit programme <span>↗</span></button></article></div></section>
+        <section class="view-panel" id="view-academics"><div class="page-heading"><div><p class="eyebrow">PUBLISHING</p><h1>Academic content</h1><p>Higher Secondary with Islamic Studies, continuing to degree studies.</p></div></div><div class="academic-admin-grid"><article class="panel-card academic-admin-card"><span>01 / HIGHER SECONDARY</span><h2>Higher Secondary + Islamic Studies</h2><p>Pathway details and subjects should be confirmed with the college before publishing.</p><button disabled>Edit programme <span>↗</span></button></article><article class="panel-card academic-admin-card"><span>02 / CONTINUING EDUCATION</span><h2>Degree studies</h2><p>Degree progression is part of the learning pathway. Contact the college to confirm available courses and details.</p><button disabled>Edit programme <span>↗</span></button></article></div></section>
 
         <section class="view-panel" id="view-messages"><div class="page-heading"><div><p class="eyebrow">SITE & ACCESS</p><h1>Contact messages</h1><p>Messages submitted in this browser are not sent to the college.</p></div></div><div class="panel-card empty-module"><span class="large-module-icon">✉</span><h2>No live contact inbox</h2><p>Connect a server-side form endpoint before collecting or storing real contact messages.</p></div></section>
 

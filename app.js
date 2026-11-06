@@ -10,35 +10,6 @@ let toastTimer;
 
 document.querySelector("#current-year").textContent = new Date().getFullYear();
 
-const themeToggle = document.querySelector("#theme-toggle");
-function setTheme(isDark) {
-  document.body.classList.toggle("theme-dark", isDark);
-  themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
-  themeToggle.title = isDark ? "Switch to light mode" : "Switch to dark mode";
-  themeToggle.querySelector("span").textContent = isDark ? "☼" : "☾";
-  localStorage.setItem("akmmiac-theme", isDark ? "dark" : "light");
-}
-setTheme(localStorage.getItem("akmmiac-theme") !== "light");
-themeToggle.addEventListener("click", () => setTheme(!document.body.classList.contains("theme-dark")));
-
-const pointerCursor = document.querySelector("#pointer-cursor");
-const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-if (pointerCursor && finePointer.matches && !reducedMotion.matches) {
-  document.body.classList.add("has-custom-pointer");
-  window.addEventListener("pointermove", (event) => {
-    if (event.pointerType !== "mouse") return;
-    pointerCursor.style.setProperty("--pointer-x", `${event.clientX}px`);
-    pointerCursor.style.setProperty("--pointer-y", `${event.clientY}px`);
-    pointerCursor.classList.add("is-visible");
-  }, { passive: true });
-  document.addEventListener("pointerover", (event) => {
-    const target = event.target instanceof Element ? event.target.closest("a, button, input, textarea, select, [role='button']") : null;
-    pointerCursor.classList.toggle("is-interactive", Boolean(target));
-  }, { passive: true });
-  window.addEventListener("blur", () => pointerCursor.classList.remove("is-visible"));
-}
-
 const revealElements = document.querySelectorAll(".reveal");
 function revealVisibleElements() {
   revealElements.forEach((element) => {
@@ -106,26 +77,7 @@ function closeModal() {
 }
 
 function openStudentPortal() {
-  openModal(`
-    <p class="modal-kicker">STUDENT DIGITAL PORTAL</p>
-    <h2 id="modal-title">A connected campus.</h2>
-    <p class="modal-lead">A preview of the student dashboard experience.</p>
-    <div class="demo-banner"><strong>Demonstration only.</strong> No student accounts, private records, or secure authentication are connected. Do not enter a real password or personal student information.</div>
-    <form class="portal-form" id="portal-form"><label>Demo student name<input name="demoName" autocomplete="off" placeholder="e.g. Student" maxlength="50" required></label><button class="button button-green" type="submit">Open sample dashboard <span>↗</span></button></form>
-    <p class="form-status">The dashboard below uses generic sample labels and is not connected to college records.</p>
-  `, "Student portal");
-  document.querySelector("#portal-form").addEventListener("submit", (event) => {
-    event.preventDefault();
-    const name = new FormData(event.currentTarget).get("demoName").trim() || "Student";
-    modalContent.innerHTML = `
-      <p class="modal-kicker">STUDENT PORTAL · SAMPLE VIEW</p><h2 id="modal-title">Your learning space.</h2>
-      <div class="demo-banner"><strong>Demo view only.</strong> This is not an authenticated student account and contains no personal academic records.</div>
-      <div class="demo-profile"><span class="demo-avatar">${escapeHtml(name.charAt(0).toUpperCase())}</span><span><strong>Welcome, ${escapeHtml(name)}</strong><small>Sample student profile · No live records</small></span></div>
-      <div class="demo-tiles"><div class="demo-tile"><span>ACADEMIC RECORDS</span><strong>Not connected</strong></div><div class="demo-tile"><span>TIMETABLE</span><strong>Awaiting college data</strong></div><div class="demo-tile"><span>STUDY MATERIALS</span><strong>No documents added</strong></div></div>
-      <div class="portal-notices"><h3>College notices</h3><p>No student notices have been published.</p></div>
-      <button class="button button-green" id="portal-back" type="button">Back to portal entrance</button>`;
-    document.querySelector("#portal-back").addEventListener("click", openStudentPortal);
-  });
+  window.open("https://ims.snec.in/student/login", "_blank", "noopener,noreferrer");
 }
 
 document.querySelector(".menu-toggle").addEventListener("click", (event) => {

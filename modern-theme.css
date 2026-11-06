@@ -448,14 +448,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   opacity: 1;
 }
 
-.has-custom-pointer, .has-custom-pointer a, .has-custom-pointer button {
-  cursor: none;
-}
-
-.has-custom-pointer input, .has-custom-pointer textarea {
-  cursor: text;
-}
-
 .has-custom-pointer .pointer-cursor {
   display: block;
 }
@@ -471,28 +463,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   background: rgba(227, 189, 92, .035);
   transform: translate(-50%, -50%);
   transition: width .2s ease, height .2s ease, background-color .2s ease, border-color .2s ease;
-}
-
-.pointer-cursor__dot {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--gold);
-  transform: translate(-50%, -50%);
-}
-
-.pointer-cursor.is-interactive .pointer-cursor__ring {
-  width: 48px;
-  height: 48px;
-  border-color: #79b9f1;
-  background: rgba(65, 143, 214, .13);
-}
-
-.pointer-cursor.is-interactive .pointer-cursor__dot {
-  background: #79b9f1;
 }
 
 @media(max-width: 1050px) {
@@ -572,3 +542,273 @@ body.theme-dark .empty-news, body.theme-dark .admission-caveat, body.theme-dark 
 }
 body.theme-dark .people-counts>div { background: #101d32; }
 body.theme-dark .primary-nav { background: #101d32; }
+
+body.theme-dark {
+  --forest: #edf4ff;
+  --forest-2: #78b2ef;
+  --leaf: #5e9fdb;
+  --mint: #172945;
+  --ivory: #101d32;
+  --paper: #0b1424;
+  --gold: #e3bd5c;
+  --gold-soft: #f0d892;
+  --ink: #eaf1fb;
+  --muted: #a4b3c8;
+  --line: #273751;
+  --terra: #75b5ef;
+  --blue: #579de0;
+  background-color: var(--paper) !important;
+  color: var(--ink);
+}
+
+body.theme-dark .utility-bar,
+body.theme-dark .quote-band,
+body.theme-dark .achievement-section,
+body.theme-dark .site-footer {
+  background-color: #0b1424;
+  color: var(--ink);
+}
+
+body.theme-dark .site-header {
+  background-color: rgba(13, 24, 42, .97);
+  border-color: rgba(227, 189, 92, .6);
+}
+
+body.theme-dark .fact-strip,
+body.theme-dark .academics-section,
+body.theme-dark .campus-section,
+body.theme-dark .values-section,
+body.theme-dark .gallery-section,
+body.theme-dark .admissions-section,
+body.theme-dark .contact-section {
+  background-color: #101d32;
+  border-color: var(--line);
+}
+
+body.theme-dark .about-section,
+body.theme-dark .updates-section,
+body.theme-dark .resources-section {
+  background-color: #0b1424;
+}
+
+body.theme-dark .section-title,
+body.theme-dark .fact-intro strong,
+body.theme-dark .fact strong,
+body.theme-dark .lead,
+body.theme-dark .value-item h3,
+body.theme-dark .news-title,
+body.theme-dark .resource-empty strong,
+body.theme-dark .resource-list strong,
+body.theme-dark .contact-aside > a,
+body.theme-dark .map-link,
+body.theme-dark .academic-content h3,
+body.theme-dark .staff-profile h3,
+body.theme-dark .photo-label {
+  color: var(--ink);
+}
+
+body.theme-dark .section-title em,
+body.theme-dark .section-kicker,
+body.theme-dark .fact-index,
+body.theme-dark .panel-glyph,
+body.theme-dark .academic-icon,
+body.theme-dark .note-star,
+body.theme-dark .value-index,
+body.theme-dark .value-symbol,
+body.theme-dark .gallery-caption span,
+body.theme-dark .resource-arrow,
+body.theme-dark .label-number,
+body.theme-dark .place-mark {
+  color: var(--gold);
+}
+
+body.theme-dark .body-copy,
+body.theme-dark .heading-aside,
+body.theme-dark .academic-content p,
+body.theme-dark .value-item p,
+body.theme-dark .news-description,
+body.theme-dark .resource-intro,
+body.theme-dark .resource-empty small,
+body.theme-dark .gallery-note,
+body.theme-dark .map-disclaimer,
+body.theme-dark .campus-note,
+body.theme-dark .values-bottom,
+body.theme-dark .about-meta,
+body.theme-dark .fact small,
+body.theme-dark .fact-place small,
+body.theme-dark .staff-note,
+body.theme-dark .form-status {
+  color: var(--muted);
+}
+
+body.theme-dark .resource-empty,
+body.theme-dark .resource-list > div,
+body.theme-dark .news-item,
+body.theme-dark .achievement-empty,
+body.theme-dark .enquiry-form,
+body.theme-dark .staff-profile,
+body.theme-dark .academic-footnote,
+body.theme-dark .photo-label {
+  background-color: #14243d;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+body.theme-dark .people-counts > div {
+  background-color: #14243d;
+  border-color: var(--line);
+  border-left-color: var(--gold);
+}
+
+body.theme-dark .people-counts strong,
+body.theme-dark .staff-initials {
+  color: var(--ink);
+}
+
+body.theme-dark .staff-initials {
+  background-color: #1b385b;
+}
+
+body.theme-dark .staff-role,
+body.theme-dark .people-counts span {
+  color: #b6c6d9;
+}
+
+body.theme-dark .humanities,
+body.theme-dark .islamic,
+body.theme-dark .academic-panel.humanities,
+body.theme-dark .academic-panel.islamic {
+  color: #edf4ff;
+  border-color: #294361;
+}
+
+body.theme-dark .academic-panel.humanities {
+  background: linear-gradient(145deg, #142945, #102139);
+}
+
+body.theme-dark .academic-panel.islamic {
+  background: linear-gradient(145deg, #18385c, #102742);
+}
+
+body.theme-dark .academic-panel.humanities .academic-content h3,
+body.theme-dark .academic-panel.islamic .academic-content h3,
+body.theme-dark .academic-panel.humanities .academic-content p,
+body.theme-dark .academic-panel.islamic .academic-content p,
+body.theme-dark .academic-panel.humanities .panel-top,
+body.theme-dark .academic-panel.islamic .panel-top,
+body.theme-dark .academic-panel.humanities .panel-bottom,
+body.theme-dark .academic-panel.islamic .panel-bottom {
+  color: #edf4ff;
+}
+
+body.theme-dark .academic-footnote p,
+body.theme-dark .academic-footnote strong,
+body.theme-dark .academic-footnote a {
+  color: #d7e3f2;
+}
+
+body.theme-dark .empty-news,
+body.theme-dark .admission-caveat,
+body.theme-dark .demo-banner,
+body.theme-dark .demo-tile {
+  background-color: #14243d;
+  border-color: var(--line);
+  color: #d1dcec;
+}
+
+body.theme-dark .demo-banner strong,
+body.theme-dark .portal-notices h3,
+body.theme-dark .demo-profile strong {
+  color: var(--ink);
+}
+
+body.theme-dark .search-field,
+body.theme-dark .enquiry-form input:not([type="checkbox"]),
+body.theme-dark .enquiry-form select,
+body.theme-dark .enquiry-form textarea,
+body.theme-dark .portal-form input,
+body.theme-dark .contact-form input,
+body.theme-dark .contact-form textarea {
+  background-color: #101d32;
+  border-color: #344a67;
+  color: var(--ink);
+}
+
+body.theme-dark .enquiry-form label,
+body.theme-dark .form-heading,
+body.theme-dark .portal-form label,
+body.theme-dark .contact-form label {
+  color: #d9e4f2;
+}
+
+body.theme-dark input::placeholder,
+body.theme-dark textarea::placeholder {
+  color: #879bb4;
+  opacity: 1;
+}
+
+body.theme-dark .gallery-filters .filter-button {
+  background-color: #14243d;
+  border-color: var(--line);
+  color: #d1dcec;
+}
+
+body.theme-dark .gallery-filters .filter-button.active,
+body.theme-dark .gallery-filters .filter-button:hover {
+  background-color: #347fc2;
+  border-color: #347fc2;
+  color: #fff;
+}
+
+body.theme-dark .academic-panel,
+body.theme-dark .resource-empty,
+body.theme-dark .resource-list > div,
+body.theme-dark .news-item,
+body.theme-dark .staff-profile,
+body.theme-dark .enquiry-form,
+body.theme-dark .academic-footnote {
+  box-shadow: 0 12px 32px rgba(2, 8, 18, .2);
+}
+
+body.theme-dark .resource-list > div:hover,
+body.theme-dark .news-item:hover,
+body.theme-dark .staff-profile:hover {
+  background-color: #1a304e;
+  border-color: #3e6a99;
+}
+
+body.theme-dark .theme-toggle {
+  border-color: #3a4b66;
+  background-color: #15243b;
+  color: var(--gold);
+}
+
+body.theme-dark .modal {
+  background-color: #101d32;
+  border-color: var(--line);
+  border-top-color: var(--gold);
+  color: var(--ink);
+}
+
+body.theme-dark .modal h2,
+body.theme-dark .modal-close {
+  color: var(--ink);
+}
+
+body.theme-dark .modal-lead,
+body.theme-dark .portal-notices p,
+body.theme-dark .demo-profile small {
+  color: var(--muted);
+}
+
+body.theme-dark .modal-backdrop {
+  background-color: rgba(2, 8, 18, .82);
+}
+
+@media(max-width: 800px) {
+  body.theme-dark .primary-nav {
+    background-color: #101d32;
+    border-color: var(--line);
+    border-top-color: rgba(227, 189, 92, .5);
+  }
+}
